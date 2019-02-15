@@ -1,0 +1,32 @@
+service: next-serverless
+
+plugins:
+  - serverless-offline
+  - serverless-apigw-binary
+  - serverless-plugin-include-dependencies
+
+frameworkVersion: ">=1.21.0 <2.0.0"
+
+custom:
+  apigwBinary:
+    types:
+      - "*/*"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+  deploymentBucket: "next-serverless-dev"
+
+package:
+  include:
+    - ./build/**
+
+functions:
+  ssr:
+    timeout: 30
+    handler: build/lambda.handler
+    events:
+      - http: ANY /
+      - http: "ANY {proxy+}"

@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "dev": "nodemon server/index.ts",
+    "build": "next build && tsc --project tsconfig.server.json",
+    "lambda": "serverless offline start",
+    "deploy": "serverless deploy --aws-profile serverless"
+  },
+  "dependencies": {
+    "@types/next": "^8.0.1",
+    "@types/react": "^16.8.3",
+    "@zeit/next-typescript": "^1.1.1",
+    "compression": "^1.7.3",
+    "express": "^4.16.4",
+    "next": "^8.0.1",
+    "nodemon": "^1.18.10",
+    "path-match": "^1.2.4",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "serverless-apigw-binary": "^0.4.4",
+    "serverless-http": "^1.9.0",
+    "serverless-offline": "^4.4.0",
+    "serverless-plugin-include-dependencies": "^3.2.1",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3",
+    "url": "^0.11.0"
+  }
+}
