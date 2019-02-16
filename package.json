@@ -3,7 +3,7 @@
     "dev": "nodemon server/index.ts",
     "build": "next build && tsc --project tsconfig.server.json",
     "lambda": "serverless offline start",
-    "deploy": "serverless deploy --aws-profile serverless"
+    "deploy": "serverless deploy"
   },
   "dependencies": {
     "@types/next": "^8.0.1",
