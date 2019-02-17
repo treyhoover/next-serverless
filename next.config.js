@@ -1,8 +1,8 @@
-const withTypescript = require('@zeit/next-typescript')
+const withTypescript = require('@zeit/next-typescript');
 
 const nextConfig = {
   target: 'serverless',
-  distDir: 'build'
+  distDir: 'build',
 };
 
-module.exports = withTypescript(nextConfig)
+module.exports = withTypescript(nextConfig);

@@ -5,19 +5,19 @@ plugins:
   - serverless-apigw-binary
   - serverless-plugin-include-dependencies
 
-frameworkVersion: ">=1.21.0 <2.0.0"
+frameworkVersion: '>=1.21.0 <2.0.0'
 
 custom:
   apigwBinary:
     types:
-      - "*/*"
+      - '*/*'
 
 provider:
   name: aws
   runtime: nodejs8.10
   stage: dev
   region: us-east-1
-  deploymentBucket: "next-serverless-dev"
+  deploymentBucket: 'next-serverless-dev'
 
 package:
   include:
