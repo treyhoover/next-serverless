@@ -4,7 +4,9 @@ import Title from '../components/Title';
 
 export default () => (
   <>
-    <Title>Hello</Title>
+    <Title margin="mb1" padding="1rem">
+      Hello
+    </Title>
 
     <ul>
       <li>

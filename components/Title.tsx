@@ -1,9 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import { getThemed } from '../styles/helpers';
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
+type Props = {
+  margin?: string;
+  padding?: string;
+  color?: string;
+};
+
+const Title: React.SFC<Props> = styled.h1<Props>`
+  ${getThemed('margin')}
+  ${getThemed('padding')}
+  ${getThemed('color')}
+  font-size: 3rem;
 `;
 
-export default props => <Title {...props} />;
+Title.defaultProps = {
+  color: 'red',
+};
+
+export default Title;
