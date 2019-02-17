@@ -29,4 +29,9 @@ functions:
     handler: build/lambda.handler
     events:
       - http: ANY /
-      - http: "ANY {proxy+}"
+      - http: 'ANY {proxy+}'
+  pageb:
+    timeout: 30
+    handler: build/lambda1.handler
+    events:
+      - http: ANY /b
