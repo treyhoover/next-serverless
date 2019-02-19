@@ -58,7 +58,6 @@ const Page: React.SFC<Props> = ({
           </>
         )}
 
-        <link rel="manifest" href="/static/brand/manifest.json" />
         <link
           rel="shortcut icon"
           href="/static/brand/favicon.ico?v=1"

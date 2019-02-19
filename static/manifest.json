@@ -1,0 +1,22 @@
+{
+  "short_name": "CS",
+  "name": "Curiosity Stream",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?start=a2hs",
+  "background_color": "#0B1120",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#161E37",
+  "gcm_sender_id": "533887614481"
+}

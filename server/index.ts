@@ -1,5 +1,8 @@
+import { parse } from 'url';
+import { join } from 'path';
 import * as next from 'next';
 import * as express from 'express';
+import rootStaticFiles from './rootStaticFiles';
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
@@ -23,7 +26,13 @@ app.prepare().then(() => {
   });
 
   server.get('*', (req, res) => {
-    return handle(req, res);
+    const parsedUrl = parse(req.url, true);
+    if (rootStaticFiles.includes(parsedUrl.pathname)) {
+      const path = join(__dirname, '..', 'static', parsedUrl.pathname);
+      app.serveStatic(req, res, path);
+    } else {
+      handle(req, res, parsedUrl);
+    }
   });
 
   server.listen(port, err => {
