@@ -28,6 +28,8 @@
     "url": "^0.11.0"
   },
   "devDependencies": {
+    "next-offline": "^3.3.5",
+    "next-purgecss": "^3.0.0",
     "serverless": "^1.37.1"
   }
 }

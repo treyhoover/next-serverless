@@ -8,6 +8,7 @@ app.use(compression());
 
 // host the static files
 app.use('/_next/static', express.static(__dirname + '/static'));
+app.use('/service-worker.js', express.static(__dirname + '/service-worker.js'));
 
 app.get('/', require('./serverless/pages/index').render);
 app.get('/a', require('./serverless/pages/a').render);

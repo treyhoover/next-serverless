@@ -9,6 +9,11 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
+  server.use(
+    '/service-worker.js',
+    express.static(__dirname + '/service-worker.js')
+  );
+
   server.get('/a', (req, res) => {
     return app.render(req, res, '/a', req.query);
   });
