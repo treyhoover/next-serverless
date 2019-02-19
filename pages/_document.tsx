@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          <meta name="apple-itunes-app" content="app-id=971830624" />>
+          <meta name="apple-itunes-app" content="app-id=971830624" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <link
             rel="apple-touch-icon"
