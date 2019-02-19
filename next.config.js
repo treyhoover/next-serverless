@@ -1,8 +1,8 @@
+const withPlugins = require('next-compose-plugins');
 const withTypescript = require('@zeit/next-typescript');
+const withCSS = require('@zeit/next-css');
 
-const nextConfig = {
+module.exports = withPlugins([[withTypescript], [withCSS]], {
   target: 'serverless',
   distDir: 'build',
-};
-
-module.exports = withTypescript(nextConfig);
+});

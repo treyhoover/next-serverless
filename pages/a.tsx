@@ -1,3 +1,9 @@
 import React from 'react';
+import Page from '../components/Page';
+import Navbar from '../components/Navbar';
 
-export default () => <div>a</div>;
+export default () => (
+  <Page>
+    <Navbar />a
+  </Page>
+);

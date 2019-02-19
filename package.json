@@ -6,12 +6,15 @@
     "deploy": "serverless deploy --aws-profile serverless"
   },
   "dependencies": {
+    "@curiositystream/curiosity-theme": "^0.0.6",
     "@types/next": "^8.0.1",
     "@types/react": "^16.8.3",
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "compression": "^1.7.3",
     "express": "^4.16.4",
     "next": "^8.0.1",
+    "next-compose-plugins": "^2.1.1",
     "nodemon": "^1.18.10",
     "path-match": "^1.2.4",
     "react": "^16.8.2",
@@ -23,5 +26,8 @@
     "ts-node": "^8.0.2",
     "typescript": "^3.3.3",
     "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "serverless": "^1.37.1"
   }
 }

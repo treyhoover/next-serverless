@@ -1,17 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
+import Page from '../components/Page';
+import Navbar from '../components/Navbar';
 
 export default () => (
-  <ul>
-    <li>
-      <Link href="/a" as="/a">
-        <a>a</a>
-      </Link>
-    </li>
-    <li>
-      <Link href="/b" as="/b">
-        <a>b</a>
-      </Link>
-    </li>
-  </ul>
+  <Page>
+    <Navbar />
+  </Page>
 );
