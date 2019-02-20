@@ -4,6 +4,10 @@ import Navbar from '../components/Navbar';
 
 export default () => (
   <Page>
-    <Navbar />b
+    <header>
+      <Navbar />
+    </header>
+
+    <main>This is page b!</main>
   </Page>
 );
