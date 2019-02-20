@@ -18,11 +18,7 @@ export default class MyDocument extends Document {
           />
           <meta name="apple-itunes-app" content="app-id=971830624" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/static/media/apple-touch-icon.png"
-          />
+
           <link
             rel="icon"
             type="image/png"

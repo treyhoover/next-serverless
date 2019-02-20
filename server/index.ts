@@ -27,6 +27,7 @@ app.prepare().then(() => {
 
   server.get('*', (req, res) => {
     const parsedUrl = parse(req.url, true);
+
     if (rootStaticFiles.includes(parsedUrl.pathname)) {
       const path = join(__dirname, '..', 'static', parsedUrl.pathname);
       app.serveStatic(req, res, path);

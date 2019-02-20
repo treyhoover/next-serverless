@@ -58,35 +58,6 @@ const Page: React.SFC<Props> = ({
           </>
         )}
 
-        <link
-          rel="shortcut icon"
-          href="/static/brand/favicon.ico?v=1"
-          key="favicon"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/static/brand/apple-touch-icon.png?v=1"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/static/brand/favicon-32x32.png?v=1"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/static/brand/favicon-16x16.png?v=1"
-        />
-        <link
-          rel="mask-icon"
-          href="/static/brand/safari-pinned-tab.svg?v=1"
-          color="#5bbad5"
-        />
-        <meta name="theme-color" content="#ffffff" />
-
         {type && (
           <>
             <meta key="og:type" property={`og:type`} content={type} />
