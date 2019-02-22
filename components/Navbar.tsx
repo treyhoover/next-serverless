@@ -9,7 +9,7 @@ const Navbar: React.SFC<Props> = props => (
   <div {...props}>
     <ul className="list ma0 pa0 flex">
       <li className="pa2">
-        <Link href="/" as="/a">
+        <Link href="/" as="/">
           <a className="white hover-gold">Home</a>
         </Link>
       </li>
