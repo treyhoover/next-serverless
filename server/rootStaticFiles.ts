@@ -1,8 +1,9 @@
 export default [
-  '/browserconfig.xml',
-  '/favicon.ico',
-  '/favicon-16x16.ico',
-  '/favicon-32x32.ico',
-  '/favicon-192x192.ico',
-  '/manifest.json',
+  '/static/browserconfig.xml',
+  '/static/favicon.ico',
+  '/static/favicon-16x16.png',
+  '/static/favicon-32x32.png',
+  '/static/favicon-192x192.png',
+  '/static/favicon-512x512.png',
+  '/static/manifest.json',
 ];

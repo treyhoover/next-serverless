@@ -1,0 +1,4 @@
+/* Hide page while loading webfonts */
+html:not(.wf-active):not(.wf-error) {
+  visibility: hidden;
+}
