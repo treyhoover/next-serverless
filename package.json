@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "nodemon server/index.ts",
+    "dev": "nodemon server/devServer.ts",
     "build": "next build && tsc --project tsconfig.server.json",
     "lambda": "serverless offline start",
     "deploy": "serverless deploy --aws-profile serverless"
