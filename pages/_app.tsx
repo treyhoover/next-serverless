@@ -17,9 +17,10 @@ class MyApp extends App {
       );
 
       setTimeout(() => {
-        var htmlClass = document.documentElement.className;
-        if (htmlClass.indexOf('wf-') === -1) {
-          htmlClass = htmlClass.replace(/([.]*)/, 'wf-error $1');
+        const { className, classList } = document.documentElement;
+
+        if (className.indexOf('wf-') === -1) {
+          classList.add('wf-error');
         }
       }, 1000);
     }
