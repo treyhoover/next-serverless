@@ -1,7 +1,7 @@
 import App, { Container } from 'next/app';
 import React from 'react';
-import '@curiositystream/curiosity-theme/css/tachyons.min.css';
-import '../static/styles.css';
+import '../css/tachyons.min.css';
+import '../css/custom.css';
 
 class MyApp extends App {
   componentDidMount() {
