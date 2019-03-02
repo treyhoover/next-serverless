@@ -1,11 +1,11 @@
-import { join } from 'path';
 import * as compression from 'compression';
 import * as express from 'express';
 import * as serverless from 'serverless-http';
 import { parse } from 'url';
 import rootStaticFiles from './rootStaticFiles';
 
-const isProd = process.env.NODE_ENV === 'production';
+const { NODE_ENV, CDN_ORIGIN } = process.env;
+const isProd = NODE_ENV === 'production';
 
 // setup Express and hook up Next.js handler
 const app = express();
@@ -30,9 +30,7 @@ app.get('/b', require('./serverless/pages/b').render);
 app.get('*', (req, res) => {
   const parsedUrl = parse(req.url, true);
   if (rootStaticFiles.includes(parsedUrl.pathname)) {
-    const path = join(__dirname, '..', parsedUrl.pathname);
-
-    res.sendFile(path);
+    res.redirect(CDN_ORIGIN + parsedUrl.pathname);
   } else {
     require('./serverless/pages/_error').render(req, res);
   }

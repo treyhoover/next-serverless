@@ -5,11 +5,8 @@ build
 .DS_Store
 
 .serverless
-.env
-.env.local
-.env.development*
-.env.test*
-.env.production*
+.env/*
+!.env/.env.local
 
 node_modules/
 npm-debug.log

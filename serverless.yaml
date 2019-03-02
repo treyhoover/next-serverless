@@ -1,6 +1,7 @@
 service: next-serverless
 
 plugins:
+  - serverless-dotenv-plugin
   - serverless-offline
   - serverless-apigw-binary
   - serverless-plugin-include-dependencies
@@ -8,6 +9,8 @@ plugins:
 frameworkVersion: '>=1.21.0 <2.0.0'
 
 custom:
+  dotenv:
+    path: ./.env/.env.production
   apigwBinary:
     types:
       - '*/*'

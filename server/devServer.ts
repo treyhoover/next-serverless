@@ -4,10 +4,10 @@ import * as next from 'next';
 import * as express from 'express';
 import rootStaticFiles from './rootStaticFiles';
 
-const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
+const port = parseInt(process.env.PORT, 10) || 3000;
 
 app.prepare().then(() => {
   const server = express();
@@ -29,9 +29,9 @@ app.prepare().then(() => {
     const parsedUrl = parse(req.url, true);
 
     if (rootStaticFiles.includes(parsedUrl.pathname)) {
-      const path = join(__dirname, '..', parsedUrl.pathname);
+      const path = join(__dirname, '..', 'static', parsedUrl.pathname);
 
-      res.sendFile(path);
+      app.serveStatic(req, res, path);
     } else {
       handle(req, res, parsedUrl);
     }
