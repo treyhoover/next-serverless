@@ -33,7 +33,7 @@
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "next-offline": "^3.3.5",
+    "next-offline": "^3.3.6",
     "next-purgecss": "^3.0.0",
     "serverless": "^1.37.1",
     "serverless-dotenv-plugin": "^2.0.1"
