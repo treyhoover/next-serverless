@@ -12,11 +12,6 @@ const port = parseInt(process.env.PORT, 10) || 3000;
 app.prepare().then(() => {
   const server = express();
 
-  server.use(
-    '/service-worker.js',
-    express.static(__dirname + '/service-worker.js')
-  );
-
   server.get('/a', (req, res) => {
     return app.render(req, res, '/a', req.query);
   });

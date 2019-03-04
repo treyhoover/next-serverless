@@ -1,29 +1,42 @@
 import React from 'react';
-import Link from 'next/link';
+import Link from './Link';
+import List from './List';
 
 type Props = {
   className?: string;
 };
 
+type NavbarLink = {
+  href: string;
+  label: string;
+};
+
+const navbarLinks: NavbarLink[] = [
+  {
+    href: '/',
+    label: 'Home',
+  },
+  {
+    href: '/a',
+    label: 'A',
+  },
+  {
+    href: '/b',
+    label: 'B',
+  },
+];
+
 const Navbar: React.SFC<Props> = props => (
   <div {...props}>
-    <ul className="list ma0 pa0 flex">
-      <li className="pa2">
-        <Link href="/" as="/">
-          <a className="white hover-gold">Home</a>
-        </Link>
-      </li>
-      <li className="pa2">
-        <Link href="/a" as="/a">
-          <a className="white hover-gold">a</a>
-        </Link>
-      </li>
-      <li className="pa2">
-        <Link href="/b" as="/b">
-          <a className="white hover-gold">b</a>
-        </Link>
-      </li>
-    </ul>
+    <List<NavbarLink> className="list ma0 pa0 flex" items={navbarLinks}>
+      {(item, index) => (
+        <li key={index} className="db ma2">
+          <Link href={item.href} className="white hover-gold no-underline">
+            {item.label}
+          </Link>
+        </li>
+      )}
+    </List>
   </div>
 );
 
