@@ -19,7 +19,7 @@ class MyApp extends App {
       setTimeout(() => {
         const { className, classList } = document.documentElement;
 
-        if (className.indexOf('wf-') === -1) {
+        if (!className.includes('wf-inactive')) {
           classList.add('wf-error');
         }
       }, 1000);
