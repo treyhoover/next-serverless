@@ -28,7 +28,7 @@
     "serverless-plugin-include-dependencies": "^3.2.1",
     "tachyons-generator": "^0.23.0",
     "ts-node": "^8.0.2",
-    "typescript": "^3.3.3",
+    "typescript": "^3.3.3333",
     "url": "^0.11.0",
     "webfontloader": "^1.6.28"
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from './Link';
+import Link from 'next/link';
 import List from './List';
 
 type Props = {
@@ -31,8 +31,8 @@ const Navbar: React.SFC<Props> = props => (
     <List<NavbarLink> className="list ma0 pa0 flex" items={navbarLinks}>
       {(item, index) => (
         <li key={index} className="db ma2">
-          <Link href={item.href} className="white hover-gold no-underline">
-            {item.label}
+          <Link href={item.href}>
+            <a className="white hover-gold no-underline">{item.label}</a>
           </Link>
         </li>
       )}

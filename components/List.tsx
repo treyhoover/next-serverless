@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Props<ListItem> = {
+export type ListProps<ListItem> = {
   isOrdered?: boolean;
   className?: string;
   items: ListItem[];
@@ -12,7 +12,7 @@ function List<ListItem = {}>({
   items,
   children,
   ...props
-}: Props<ListItem>) {
+}: ListProps<ListItem>) {
   const T = isOrdered ? 'ol' : 'ul';
 
   return <T {...props}>{items.map(children)}</T>;
