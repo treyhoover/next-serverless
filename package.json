@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "dev": "ENV_FILE=.env.local nodemon server/devServer.ts",
+    "dev": "cross-env ENV_FILE=.env.local nodemon server/devServer.ts",
     "css:build": "node ./css/buildTachyons",
-    "build": "ENV_FILE=.env.production yarn css:build && next build && tsc --project tsconfig.server.json",
+    "build": "yarn css:build && cross-env ENV_FILE=.env.production next build && tsc --project tsconfig.server.json",
     "lambda": "serverless offline start",
     "static:deploy": "aws s3 sync ./static s3://next-serverless-dev/static --profile serverless",
     "deploy": "yarn static:deploy && serverless deploy --aws-profile serverless"
@@ -14,6 +14,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "compression": "^1.7.3",
+    "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "next": "^8.0.1",
