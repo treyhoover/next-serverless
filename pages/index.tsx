@@ -13,6 +13,8 @@ const slides = [
 ];
 
 export default () => {
+  const [scrollingLocked, setScrollingLocked] = React.useState(false);
+
   return (
     <Page>
       <header>
@@ -25,6 +27,11 @@ export default () => {
           id="slider"
           items={slides}
           className="mw-100 nowrap overflow-auto snap-x hide-scrollbar mv4"
+          onScrollStop={() => {
+            setScrollingLocked(false);
+
+            console.log('unlocked', scrollingLocked);
+          }}
         >
           {(slide, index, width) => (
             <div
@@ -37,7 +44,7 @@ export default () => {
               <img
                 src={slide}
                 style={{
-                  height: (width * 9) / 16,
+                  height: width * (9 / 16),
                 }}
               />
             </div>
@@ -47,6 +54,11 @@ export default () => {
           onClick={e => {
             const sliderEl = document.getElementById('slider');
             const { scrollLeft, clientWidth } = sliderEl;
+            const canScrollMore = scrollLeft > 0;
+
+            if (scrollingLocked || !canScrollMore) return;
+
+            setScrollingLocked(true);
 
             sliderEl.scroll({
               left: scrollLeft - clientWidth,
@@ -60,6 +72,11 @@ export default () => {
           onClick={e => {
             const sliderEl = document.getElementById('slider');
             const { scrollLeft, clientWidth } = sliderEl;
+            const canScrollMore = scrollLeft < clientWidth * 2;
+
+            if (scrollingLocked || !canScrollMore) return;
+
+            setScrollingLocked(true);
 
             sliderEl.scroll({
               left: scrollLeft + clientWidth,
