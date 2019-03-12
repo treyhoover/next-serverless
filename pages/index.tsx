@@ -8,6 +8,6 @@ export default () => (
       <Navbar />
     </header>
 
-    <main>This is the home page!</main>
+    <main className="ph3">This is the home page!</main>
   </Page>
 );

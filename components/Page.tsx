@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Head from 'next/head';
 
 type Props = {
+  bodyClassName?: string;
   className?: string;
   title?: string;
   description?: string;
@@ -12,6 +13,7 @@ type Props = {
 };
 
 const Page: React.SFC<Props> = ({
+  bodyClassName,
   className,
   children,
   title,
@@ -22,14 +24,14 @@ const Page: React.SFC<Props> = ({
   ...props
 }) => {
   useEffect(() => {
-    const bodyClassNameArray = className.split(' ');
+    const bodyClassNameArray = bodyClassName.split(' ');
 
     document.body.classList.add(...bodyClassNameArray);
 
     return () => {
       document.body.classList.remove(...bodyClassNameArray);
     };
-  }, [className]);
+  }, [bodyClassName]);
 
   return (
     <div className={className} {...props}>
@@ -79,7 +81,8 @@ const Page: React.SFC<Props> = ({
 Page.defaultProps = {
   title: 'Next Serverless',
   description: 'A simple demo of next.js with lambdas',
-  className: 'min-vh-100 bg-navy white sans-serif',
+  bodyClassName: 'bg-navy white',
+  className: 'min-vh-100 sans-serif',
   type: 'website',
 };
 
