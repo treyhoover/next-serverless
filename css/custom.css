@@ -2,3 +2,31 @@
 html:not(.wf-active):not(.wf-error) {
   visibility: hidden;
 }
+
+@supports (scroll-snap-align: start) {
+  /* modern scroll snap points */
+  .snap-x {
+    scroll-snap-type: x mandatory;
+  }
+  .snap-align-center {
+    scroll-snap-align: center;
+  }
+
+  .snap-align-start {
+    scroll-snap-align: start;
+  }
+
+  .snap-align-end {
+    scroll-snap-align: end;
+  }
+}
+
+.hide-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

@@ -8,6 +8,7 @@
     "deploy": "yarn static:deploy && serverless deploy --aws-profile serverless"
   },
   "dependencies": {
+    "@rehooks/component-size": "^1.0.2",
     "@types/next": "^8.0.1",
     "@types/react": "^16.8.3",
     "@types/webfontloader": "^1.6.29",
